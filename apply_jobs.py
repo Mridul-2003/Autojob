@@ -38,7 +38,9 @@ class ApplyJobs:
         )
         self.job_url = job_url
         self.resume_path = resume_path
+        
     def signin(self,cover_letter_path=None,cover_letter_text=None,Prefered_work_type=None,Join_immediately=None,Current_location=None):
+        resume_text = extract_text_from_pdf(self.resume_path)
         max_retries = 3  # Maximum number of retries
         for attempt in range(max_retries):
             try:
