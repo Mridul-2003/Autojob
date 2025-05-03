@@ -26,7 +26,7 @@ options.add_argument("headless=new")
 options.add_experimental_option("excludeSwitches", ["enable-automation"])
 
 # Extract resume text
-resume_text = extract_text_from_pdf("/Volumes/PortableSSD/Jobscraper/resume-9.pdf")
+# resume_text = extract_text_from_pdf("/Volumes/PortableSSD/Jobscraper/resume-9.pdf")
 selenium_host = os.environ.get("SELENIUM_HOST", "selenium")
 selenium_grid_url = f"https://selenium-grid-server.onrender.com/wd/hub" # Use "selenium" as the host in docker network
 class ApplyJobs:
