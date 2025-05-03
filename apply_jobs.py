@@ -58,7 +58,7 @@ class ApplyJobs:
                 signin_button.click()
 
                 # Wait for login success
-                wait = WebDriverWait(self.driver, 180)
+                wait = WebDriverWait(self.driver, 50)
                 wait.until(EC.presence_of_element_located((By.XPATH, "//button[normalize-space()='Logout']")))
                 print("Login successful!")
                 break  # Exit the loop if login is successful
@@ -69,11 +69,11 @@ class ApplyJobs:
                     print("Max retries reached. Exiting.")
                     self.driver.quit()
                     return
-                time.sleep(5)  # Wait before retrying
+                time.sleep(2)  # Wait before retrying
             
 
         # Click on Careers
-        time.sleep(10)
+        time.sleep(2)
         self.driver.find_element(By.XPATH, "//div[normalize-space()='Careers']").click()
         match = re.search(r'/apply/(\d+)', self.job_url)
         if match:
