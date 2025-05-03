@@ -1,0 +1,10 @@
+%==== Skills ====%
+\header{\VAR{heading}}
+
+\begin{tabularx}{\textwidth}{ p{0.3\textwidth} X }
+    \BLOCK{ for skill in skills }
+    \textbf{\VAR{skill.name}}: & \VAR{', '.join(skill.keywords)} \\
+    \BLOCK{ endfor }
+\end{tabularx}
+
+\vspace{2mm}

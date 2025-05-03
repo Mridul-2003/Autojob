@@ -1,0 +1,16 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Education
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cvsection{\VAR{heading}}
+\begin{cventries}
+	\BLOCK{ for school in schools }
+    \cventry
+	{\VAR{school.degree} \BLOCK{ if school.major} in \VAR{school.major}  \BLOCK{ endif }}
+	{\BLOCK{ if school.institution } \VAR{school.institution} \BLOCK{ endif }}
+	{\BLOCK{ if school.city } \VAR{school.city} \BLOCK{ endif } }
+	{\BLOCK{ if school.start_date} \VAR{school.start_date} - \BLOCK{ endif } \BLOCK{ if school.end_date} \VAR{school.end_date} \BLOCK{ endif }}
+	{\BLOCK{ if school.gpa } GPA: \VAR{school.gpa} \BLOCK{ endif }}
+    \BLOCK{ endfor }
+\end{cventries}
+
+\vspace{-2mm}

@@ -1,0 +1,16 @@
+%==== Projects ====%
+\cvsection{\VAR{heading}}
+\begin{cventries}
+    \BLOCK{ for project in projects }
+	\cventry
+	{\BLOCK{ if project.description } \VAR{project.description} \BLOCK{ endif }}
+	{\BLOCK{ if project.title } \VAR{project.title} \BLOCK{ endif }}
+	{\BLOCK{ if project.tools }
+        {\VAR{project.tools[0]}\BLOCK{ for keyword in project.tools[1:]}, \VAR{keyword}\BLOCK{ endfor } } 
+    \BLOCK{ endif }}
+	{\BLOCK{ if project.impact } \VAR{project.impact} \BLOCK{ endif }}
+	{}
+	
+	\vspace{-5mm}
+    \BLOCK{ endfor }
+\end{cventries}

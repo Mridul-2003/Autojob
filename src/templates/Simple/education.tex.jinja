@@ -1,0 +1,13 @@
+%==== Education ====%
+\header{\VAR{heading}}
+\BLOCK{ for school in schools }
+\BLOCK{ if school.institution } \textbf{\VAR{school.institution}} \BLOCK{ endif } \\  % Institution on a new line
+\BLOCK{ if school.degree } \VAR{school.degree} \BLOCK{ endif }
+\BLOCK{ if school.major } \textbar\ \VAR{school.major} \BLOCK{ endif } \\  % Degree and major on the same line
+\BLOCK{ if school.city } \VAR{school.city}, \BLOCK{ endif } \BLOCK{ if school.state } \VAR{school.state} \BLOCK{ endif }  \\  % City and state on a new line
+\BLOCK{ if school.gpa } \textit{GPA: \VAR{school.gpa}} \BLOCK{ endif } \\  % GPA on its own line
+\hfill  % Align dates to the right
+\BLOCK{ if school.start_date} \VAR{school.start_date} - \BLOCK{ endif }
+\BLOCK{ if school.end_date} \VAR{school.end_date} \BLOCK{ endif } \\
+\vspace{4mm}  % Add some space between schools for better readability
+\BLOCK{ endfor }

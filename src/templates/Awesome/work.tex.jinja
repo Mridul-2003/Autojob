@@ -1,0 +1,25 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Experience
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cvsection{\VAR{heading}}
+\begin{cventries}
+\BLOCK{ for work in works }
+    \cventry
+    {\BLOCK{ if work.job_title } \VAR{work.job_title} \BLOCK{ else } N/A \BLOCK{ endif }}
+    {\BLOCK{ if work.company_name } \VAR{work.company_name} \BLOCK{ else } N/A \BLOCK{ endif }}
+    {\BLOCK{ if work.location } \VAR{work.location} \BLOCK{ else } Remote/Hybrid \BLOCK{ endif }}
+    {\BLOCK{ if work.start_date } \VAR{work.start_date} \BLOCK{ else } Unknown \BLOCK{ endif } - 
+     \BLOCK{ if work.end_date } \VAR{work.end_date} \BLOCK{ else } Present \BLOCK{ endif }}
+    {
+        \begin{cvitems}
+        \BLOCK{ if work.responsibilities }
+            \BLOCK{ for highlight in work.responsibilities }
+                \item \VAR{highlight}
+            \BLOCK{ endfor }
+        \BLOCK{ else }
+            \item No specific responsibilities listed.
+        \BLOCK{ endif }
+        \end{cvitems}
+    }
+\BLOCK{ endfor }
+\end{cventries}

@@ -1,0 +1,20 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EXPERIENCE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{\VAR{heading}}
+
+\BLOCK{ for work in works }
+\runsubsection{\BLOCK{ if work.company_name } \textbf{\VAR{work.company_name}} \BLOCK{ endif }}
+\descript{\BLOCK{ if work.job_title }| \VAR{work.job_title} \BLOCK{ endif }  }
+\location{\BLOCK{ if work.start_date} \VAR{work.start_date} - \BLOCK{ endif } \BLOCK{ if work.end_date} \VAR{work.end_date} \BLOCK{ endif }}
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\BLOCK{ if work.responsibilities } 
+\begin{tightemize}
+\BLOCK{ for highlight in work.responsibilities }
+	\item \VAR{highlight}
+\BLOCK{ endfor }
+\end{tightemize}
+\BLOCK{ endif }
+\sectionsep
+\BLOCK{ endfor }

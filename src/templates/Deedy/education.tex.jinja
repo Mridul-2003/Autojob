@@ -1,0 +1,15 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EDUCATION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{\VAR{heading}} 
+\BLOCK{ for school in schools }
+\subsection{\BLOCK{ if school.institution }\VAR{school.institution} \BLOCK{ endif }}
+\descript{\VAR{school.degree} \BLOCK{ if school.major } in \VAR{school.major}  \BLOCK{ endif }}
+\location{ \BLOCK{ if school.start_date} \VAR{school.start_date} - \BLOCK{ endif } \BLOCK{ if school.end_date} \VAR{school.end_date} \BLOCK{ endif }\\
+\BLOCK{ if school.city } \VAR{school.city} \BLOCK{ endif }
+}
+\BLOCK{ if school.gpa } \location{GPA: \VAR{school.gpa}} \BLOCK{ endif }
+
+\sectionsep
+\BLOCK{ endfor }

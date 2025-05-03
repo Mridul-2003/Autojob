@@ -1,0 +1,20 @@
+%==== Experience ====%
+\header{\VAR{heading}}
+\vspace{1mm}
+\BLOCK{ for work in works }
+\BLOCK{ if work.company_name } \textbf{\VAR{work.company_name}} \BLOCK{ endif } 
+\BLOCK{ if work.location } \hfill \VAR{work.location} \BLOCK{ endif }\\
+\BLOCK{ if work.job_title } \textit{\VAR{work.job_title}} \BLOCK{ endif } 
+\hfill
+\BLOCK{ if work.start_date} \VAR{work.start_date} - \BLOCK{ endif }
+\BLOCK{ if work.end_date} \VAR{work.end_date} \BLOCK{ endif }\\
+\BLOCK{ if work.responsibilities }
+\vspace{-1mm}
+\begin{itemize} \itemsep 1pt
+\BLOCK{ for highlight in work.responsibilities }
+    \item \VAR{highlight}
+\BLOCK{ endfor }
+\end{itemize}
+\BLOCK{ endif }
+
+\BLOCK{ endfor }
