@@ -28,7 +28,7 @@ options.add_experimental_option("excludeSwitches", ["enable-automation"])
 # Extract resume text
 # resume_text = extract_text_from_pdf("/Volumes/PortableSSD/Jobscraper/resume-9.pdf")
 selenium_host = os.environ.get("SELENIUM_HOST", "selenium")
-selenium_grid_url = f"https://selenium-grid-server.onrender.com/wd/hub" # Use "selenium" as the host in docker network
+selenium_grid_url = f"https://linkedin-autojobapply-2.onrender.com/wd/hub" # Use "selenium" as the host in docker network
 class ApplyJobs:
     def __init__(self,job_url,resume_path):
         # self.driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
