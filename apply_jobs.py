@@ -40,7 +40,7 @@ class ApplyJobs:
         self.job_url = job_url
         self.resume_path = resume_path
         
-    def signin(self,cover_letter_path=None,cover_letter_text=None,Prefered_work_type=None,Join_immediately=None,Current_location=None):
+    def signin(self,email,password,cover_letter_path=None,cover_letter_text=None,Prefered_work_type=None,Join_immediately=None,Current_location=None):
         resume_text = extract_text_from_pdf(self.resume_path)
         max_retries = 3  # Maximum number of retries
         for attempt in range(max_retries):
@@ -51,10 +51,10 @@ class ApplyJobs:
                 # Login
                 email = self.driver.find_element(By.CSS_SELECTOR, "input[placeholder='Enter your email']")
                 email.clear()
-                email.send_keys("gauravsaini905888@gmail.com")
+                email.send_keys(email)
                 password = self.driver.find_element(By.CSS_SELECTOR, "input[placeholder='Enter your password']")
                 password.clear()
-                password.send_keys("Gaurav$05")
+                password.send_keys(password)
                 signin_button = self.driver.find_element(By.CSS_SELECTOR, "button[type='submit']")
                 signin_button.click()
 
