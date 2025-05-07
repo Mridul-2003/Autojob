@@ -323,6 +323,8 @@ else:
         work_mode = st.sidebar.radio("Preferef Work Mode:",("Remote","On-site","Hybrid"))
         join_immediately = st.sidebar.radio("Are you ready to join immedately?",("Yes","No"))
         current_location = st.sidebar.text_input("Current Location", "")
+        email = st.sidebar.text_input("Enter Your Email","")
+        password = st.sidebar.text_input("Enter your Password","",type="password")
         if uploaded_resume:
             with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as temp_file:
                 temp_file.write(uploaded_resume.read())
@@ -517,7 +519,7 @@ else:
                                     
                                     st.write(f"Applying for job: {job['job_apply_link']}")
                                     applyjobs = ApplyJobs(job['job_apply_link'],resume_path)
-                                    applyjobs.signin(cover_letter_path, ai_generated_cover_letter,work_mode,join_immediately,current_location)
+                                    applyjobs.signin(email,password,cover_letter_path, ai_generated_cover_letter,work_mode,join_immediately,current_location)
                                     st.success(f"✅ Successfully applied for: {job['job_title']}")
 
                                 st.markdown("---")
