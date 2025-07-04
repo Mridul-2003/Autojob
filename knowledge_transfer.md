@@ -168,17 +168,16 @@ This project is an automated job search, resume tailoring, and job application p
 
 ```mermaid
 flowchart TD
-    A[User Uploads Resume/Signs Up] --> B[Streamlit UI]
-    B --> C[Resume Parsing (resume_parse.py)]
-    B --> D[Signup Automation (sign_up.py)]
-    B --> E[Job Search/ATS Scoring (ats_score.py)]
+    A[User Uploads Resume / Signs Up] --> B[Streamlit UI]
+    B --> C[Resume Parsing - resume_parse.py]
+    B --> D[Signup Automation - sign_up.py]
+    B --> E[Job Search / ATS Scoring - ats_score.py]
     E --> F[Azure Table Storage]
-    B --> G[Cover Letter Generation (coverletter.py)]
-    B --> H[Automated Application (apply_jobs.py)]
+    B --> G[Cover Letter Generation - coverletter.py]
+    B --> H[Automated Application - apply_jobs.py]
     H --> I[Selenium]
     F --> E
 ```
-
 ---
 
 ## Tips for Maintenance
